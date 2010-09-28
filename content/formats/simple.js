@@ -75,7 +75,11 @@ function getSourceForCommand(commandObj) {
 	if (commandObj.type == 'command') {
 		command = commandObj;
 		command = command.createCopy();
-		template = options.commandTemplate;
+		if (command.value == '') {
+			template = "${command.command} | ${command.target}\n";
+		} else {
+			template = "${command.command} | ${command.target} | ${command.value}\n";
+		}
 	} else if (commandObj.type == 'comment') {
 		comment = commandObj;
 		template = options.commentTemplate;
@@ -168,9 +172,6 @@ this.options = {
 	"#testing: ${baseURL}\n" +
 	"#test: ${name}\n" +
 	"${commands}",
-
-	commandTemplate:
-	"${command.command} | ${command.target} | ${command.value}\n",
 
 	commentTemplate:
 	"//${comment.comment}\n",
