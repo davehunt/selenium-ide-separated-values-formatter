@@ -6,7 +6,7 @@
     <em:name>Separated Values Formatter</em:name>
     <em:version>1.0.0</em:version>
     <em:creator>Dave Hunt</em:creator>
-    <em:description>A plugin to add a seperated values formatter to Selenium-IDE</em:description>
+    <em:description>A plugin to add a separated values formatter to Selenium-IDE</em:description>
     <em:type>2</em:type> <!-- type extension -->
  
     <em:targetApplication>
