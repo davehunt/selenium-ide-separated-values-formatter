@@ -76,9 +76,9 @@ function getSourceForCommand(commandObj) {
 		command = commandObj;
 		command = command.createCopy();
 		if (command.value == '') {
-			template = "${command.command} | ${command.target}\n";
+			template = "${command.command}${options.separator}${command.target}\n";
 		} else {
-			template = "${command.command} | ${command.target} | ${command.value}\n";
+			template = "${command.command}${options.separator}${command.target}${options.separator}${command.value}\n";
 		}
 	} else if (commandObj.type == 'comment') {
 		comment = commandObj;
@@ -150,12 +150,11 @@ function format(testCase, name) {
  * Optional: The customizable option that can be used in format/parse functions.
  */
 this.options = {
+	
+	separator: " | ",
+	
 	commandLoadPattern:
 	"\\s*([^\\|\\s]+)\\s+\\|\\s+([^\\|\\s]+?)([\\r\\n]|\\s+\|\\s+([^\\|\\s]+?))",
-	
-	// \s*(\w+?)\s+\|\s+([\d\D]+?)\s+\|\s*([\d\D]*?)\s?[\n\r]
-	// ^\s*([^\|\s]+)\s+\|\s+([^\|\s]+)\s+\|\s+([^\s]*)$
-	// \s*([^\|\s]+)\s+\|\s+([^\|\s]+?)([\r\n]|\s+\|\s+([^\|\s]+?))
 	
 	commandLoadScript:
 	"command.command = result[1];\n" +
@@ -179,3 +178,10 @@ this.options = {
 	escapeDollar:
 	"false"
 };
+
+this.configForm = 
+	'<description>Separator</description>' +
+	'<menulist id="options_separator"><menupopup>' +
+	'<menuitem label="pipe (|)" value=" | "/>' +
+	'<menuitem label="comma (,)" value=", "/>' +
+	'</menupopup></menulist>';
