@@ -23,12 +23,13 @@ function convertText(command, converter) {
  * @param source The source to parse
  */
 function parse(testCase, source) {
+	//\\s*([^\\|\\s]+)\\s*\\|\\s*([^\\|\\s]+)(?:\\s*\\|\\s*([^\\|\\s\\r\\n]+)|.{0})
 	var commandLoadPattern =  "\\s*([^\\" +
 		options.separator.trim() + "\\s]+)\\s*\\" +
 		options.separator.trim() + "\\s*([^\\" +
-		options.separator.trim() + "\\s]+?)([\\r\\n]|\\s*\\" +
+		options.separator.trim() + "\\s]+)(?:\\s*\\" +
 		options.separator.trim() + "\\s*([^\\" +
-		options.separator.trim() + "\\s]+)[\\r\\n])";
+		options.separator.trim() + "\\s\\r\\n]+)|.{0})";
 	var commandRegexp = new RegExp(commandLoadPattern, 'i');
 	var commentRegexp = new RegExp(options.commentLoadPattern, 'i');
 	var commandOrCommentRegexp = new RegExp("((" + commandLoadPattern + ")|(" + options.commentLoadPattern + "))", 'ig');
@@ -166,10 +167,10 @@ this.options = {
 	commandLoadScript:
 	"command.command = result[1];\n" +
 	"command.target = result[2];\n" +
-	"command.value = result[4] || '';\n",
+	"command.value = result[3] || '';\n",
 
 	commentLoadPattern:
-	"\\/\\/(.*)",
+	"[\\r\\n]\\/\\/(.*)",
 
 	commentLoadScript:
 	"comment.comment = result[1];\n",
