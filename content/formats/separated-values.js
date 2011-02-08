@@ -1,3 +1,7 @@
+String.prototype.trim = function () {
+    return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
 /*
  * Separated Values format
  */
@@ -19,9 +23,15 @@ function convertText(command, converter) {
  * @param source The source to parse
  */
 function parse(testCase, source) {
-	var commandRegexp = new RegExp(options.commandLoadPattern, 'i');
+	var commandLoadPattern =  "\\s*([^\\" +
+		options.separator.trim() + "\\s]+)\\s*\\" +
+		options.separator.trim() + "\\s*([^\\" +
+		options.separator.trim() + "\\s]+?)([\\r\\n]|\\s*\\" +
+		options.separator.trim() + "\\s*([^\\" +
+		options.separator.trim() + "\\s]+)[\\r\\n])";
+	var commandRegexp = new RegExp(commandLoadPattern, 'i');
 	var commentRegexp = new RegExp(options.commentLoadPattern, 'i');
-	var commandOrCommentRegexp = new RegExp("((" + options.commandLoadPattern + ")|(" + options.commentLoadPattern + "))", 'ig');
+	var commandOrCommentRegexp = new RegExp("((" + commandLoadPattern + ")|(" + options.commentLoadPattern + "))", 'ig');
 	var doc = source;
 	var commands = [];
 	var commandFound = false;
@@ -152,17 +162,14 @@ function format(testCase, name) {
 this.options = {
 	
 	separator: " | ",
-	
-	commandLoadPattern:
-	"\\s*([^\\|\\s]+)\\s+\\|\\s+([^\\|\\s]+?)([\\r\\n]|\\s+\|\\s+([^\\|\\s]+?))",
-	
+
 	commandLoadScript:
 	"command.command = result[1];\n" +
 	"command.target = result[2];\n" +
 	"command.value = result[4] || '';\n",
 
 	commentLoadPattern:
-	"\\s*\\/\\/(.*)\\s*",
+	"\\/\\/(.*)",
 
 	commentLoadScript:
 	"comment.comment = result[1];\n",
