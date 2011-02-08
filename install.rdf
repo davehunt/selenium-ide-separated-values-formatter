@@ -2,11 +2,11 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>simple-formatter@dave.hunt</em:id>
-    <em:name>Simple Formatter</em:name>
+    <em:id>separated-values-formatter@dave.hunt</em:id>
+    <em:name>Separated Values Formatter</em:name>
     <em:version>1.0.0</em:version>
     <em:creator>Dave Hunt</em:creator>
-    <em:description>A plugin to add a simple formatter to Selenium-IDE</em:description>
+    <em:description>A plugin to add a seperated values formatter to Selenium-IDE</em:description>
     <em:type>2</em:type> <!-- type extension -->
  
     <em:targetApplication>

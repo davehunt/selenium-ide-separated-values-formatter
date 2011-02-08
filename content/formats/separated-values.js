@@ -1,8 +1,8 @@
 /*
- * Simple format
+ * Separated Values format
  */
 
-this.name = "simple";
+this.name = "separated-values";
 
 function convertText(command, converter) {
 	var props = ['command', 'target', 'value'];

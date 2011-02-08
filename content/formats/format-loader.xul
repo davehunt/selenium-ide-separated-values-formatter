@@ -7,7 +7,7 @@
     <script type="application/x-javascript" src="chrome://selenium-ide/content/api.js"/>
     <html:script type="application/javascript">
         var ide_api = new API();
-        ide_api.addPlugin("simple-formatter@dave.hunt");
-        ide_api.addPluginProvidedFormatter("simple", "Simple", "chrome://simple-formatter/content/formats/simple.js", true);
+        ide_api.addPlugin("separated-values-formatter@dave.hunt");
+        ide_api.addPluginProvidedFormatter("separated-values", "Separated Values", "chrome://separated-values-formatter/content/formats/separated-values.js", true);
     </html:script>
 </overlay>

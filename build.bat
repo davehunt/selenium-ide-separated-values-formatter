@@ -2,7 +2,7 @@
  
 setlocal
  
-set APP_NAME="simple-formatter"
+set APP_NAME="separated-values-formatter"
 set CHROME_PROVIDERS="content"
  
 set ROOT_DIR=%CD%

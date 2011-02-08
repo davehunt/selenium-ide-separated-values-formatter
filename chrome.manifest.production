@@ -1,3 +1,3 @@
-content simple-formatter  chrome/content/
+content separated-values-formatter  chrome/content/
  
 overlay chrome://selenium-ide/content/selenium-ide-overlay.xul chrome://simple-formatter/content/formats/format-loader.xul

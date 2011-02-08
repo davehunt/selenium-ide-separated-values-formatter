@@ -1,16 +1,12 @@
 =================================================
-Name: Simple Formatter
+Name: Separated Values Formatter
 Version: 1.0.0
 Requirements: Selenium IDE v1.0.8
 =================================================
 
-IMPORTANT:
-This plugin is currently in alpha and not complete! It is recommended
-that you do not build/install it unless you intend to work on it.
-
 NOTE:
-This is a plugin for Selenium IDE that adds a simple formatter, which can be
-used to easily share examples of tests.
+This is a plugin for Selenium IDE that adds a separated values formatter,
+which can be used to easily share examples of tests.
 
 INSTALLATION:
 1. Run build.bat (or build.sh on Linux).

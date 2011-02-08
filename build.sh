@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_NAME=simple-formatter          # short-name, jar and xpi files name. Must be lowercase with no spaces
+APP_NAME=separated-values-formatter          # short-name, jar and xpi files name. Must be lowercase with no spaces
 CHROME_PROVIDERS="content"  # which chrome providers we have (space-separated list)
 ROOT_DIRS="defaults"         # ...and these directories       (space separated list)
 
