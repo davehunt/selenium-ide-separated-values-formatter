@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>simple-formatter@dave.hunt</em:id>
     <em:name>Simple Formatter</em:name>
-    <em:version>1.0 (alpha 1)</em:version>
+    <em:version>1.0.0</em:version>
     <em:creator>Dave Hunt</em:creator>
     <em:description>A plugin to add a simple formatter to Selenium-IDE</em:description>
     <em:type>2</em:type> <!-- type extension -->
